@@ -2,5 +2,6 @@
     "lastankiuse" : [2000,1,1],
     "startdateuse" : [2000,1,1],
     "debug" : 0,
-    "streak" : 0
+    "streak" : 0,
+    "frozen" : [2000,1,1]
 }

@@ -23,7 +23,7 @@
     transform: translate(-50%, -50%);
     font-size: 18px;
     font-weight: 900;
-    color: white;
+    color: var(--fg);
     font-family: 'Arial';
     text-shadow: 0px 0px 4px #000;
     margin: 0;
@@ -108,6 +108,7 @@ div.week {
     transition: 300ms;
     display: grid;
     place-items: center;
+    border: 0.5px solid black;
     
 }
 div.week:hover::before {
@@ -136,13 +137,32 @@ div.week::before {
     height: 100%;
     transition: 500ms;
     aspect-ratio: unset;
-    background-color: rgba(37,37,37,1);
+    background-color: var(--border-subtle);
+}
+div.week.day-frozen {
+    background: rgb(141,214,248);
+    background: linear-gradient(90deg, 
+        rgba(141,214,248,1) 0%, 
+        rgba(141,184,248,1) 14.3%, 
+        rgba(141,169,248,1) 28.6%, 
+        rgba(146,162,248,1) 42.8%, 
+        rgba(149,141,248,1) 50%, 
+        rgba(146,162,248,1) 57.1%, 
+        rgba(141,169,248,1) 71.4%, 
+        rgba(141,192,248,1) 85.7%, 
+        rgba(141,214,248,1) 100%);
+}
+div.week.day-frozen::before {
+    transform: scale(0.92, 0.94);
+}
+div.week.day-frozen:hover::before {
+    transform: scale(0.92, 0.94);
 }
 .week span {
     display: block;
     transition: 500ms;
     font-weight: 900;
-    color: #fff;
+    color: var(--fg);
     text-align: center;
 }
 .week span:nth-child(2) {

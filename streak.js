@@ -21,7 +21,23 @@ function decreaseCounter() {
     streak_counter.innerHTML = count
 }
 function freeze() {
-    let a = 1
+    //let currentday = document.querySelector('.day-current')
+    let all_days = document.querySelectorAll('.week')
+
+    let current_day
+    let tomorrow_i
+    for (let i=0; i < all_days.length; i++) {
+        if (all_days[i].classList.contains('day-current')) {
+            current_day = i
+        }
+    }
+    if (all_days.length == current_day) {
+        tomorrow_i = 0
+    } else {
+        tomorrow_i = current_day + 1
+    }
+    tomorrow_day = all_days[tomorrow_i]
+    tomorrow_day.classList.toggle('day-frozen')
 }
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms))
